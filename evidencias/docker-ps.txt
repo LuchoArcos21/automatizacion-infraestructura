@@ -1,0 +1,16 @@
+NAMES             STATUS                            PORTS
+lab-web           Up 4 minutes                      0.0.0.0:8081->80/tcp
+lab-app           Up 13 minutes                     
+lab-db            Up 13 minutes (healthy)           5432/tcp
+dvwa-dvwa-1       Up 35 minutes                     127.0.0.1:4280->80/tcp
+dvwa-db-1         Up 35 minutes                     3306/tcp
+struts-target     Up 35 minutes (healthy)           
+drupal-target     Up 35 minutes (healthy)           
+attacker          Up 35 minutes                     
+activemq-target   Up 35 minutes (unhealthy)         
+base_datos        Up 35 minutes                     0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp
+snmp-server       Up 35 minutes                     0.0.0.0:10161->161/udp, [::]:10161->161/udp
+dns-server        Up 35 minutes                     0.0.0.0:10053->53/tcp, 0.0.0.0:10053->53/udp, [::]:10053->53/tcp, [::]:10053->53/udp
+smb-server        Up 35 minutes                     0.0.0.0:10137->137/udp, [::]:10137->137/udp, 0.0.0.0:10138->138/udp, [::]:10138->138/udp, 0.0.0.0:10139->139/tcp, [::]:10139->139/tcp, 0.0.0.0:10445->445/tcp, [::]:10445->445/tcp
+ntis-iot          Restarting (255) 35 seconds ago   
+ntis-linux        Restarting (255) 37 seconds ago   

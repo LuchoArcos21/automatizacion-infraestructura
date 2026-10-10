@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Sat, 10 Oct 2026 19:26:45 GMT
+Content-Type: text/html
+Content-Length: 206
+Last-Modified: Sat, 10 Oct 2026 19:22:12 GMT
+Connection: keep-alive
+ETag: "6aca9064-ce"
+Accept-Ranges: bytes
+
+<h1>Servidor Web - lab</h1>
+<p>Infraestructura creada con Terraform.</p>
+<p>Red: 10.10.0.0/24 | WEB 10.10.0.10 | APP 10.10.0.20 | DB 10.10.0.30</p>
+<p><a href="/app/">Ir al servidor de aplicaciones</a></p>
