@@ -23,7 +23,7 @@ Ver [`docs/arquitectura.md`](docs/arquitectura.md).
 | Elemento | IP | Tecnología |
 |---|---|---|
 | Red `lab-network` | 10.10.0.0/24 (GW 10.10.0.1) | Docker bridge |
-| Servidor Web | 10.10.0.10 | nginx (puerto 80) |
+| Servidor Web | 10.10.0.10 | nginx (puerto interno 80, puerto de acceso 8081)|
 | Servidor de Aplicaciones | 10.10.0.20 | Python http.server (8080) |
 | Servidor de Base de Datos | 10.10.0.30 | PostgreSQL 16 (5432) |
 
