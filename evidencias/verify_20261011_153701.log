@@ -1,0 +1,70 @@
+=== Verificación de infraestructura - Sun Oct 11 03:37:01 PM EDT 2026 ===
+
+--- terraform validate ---
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+--- terraform state list ---
+docker_container.app
+docker_container.db
+docker_container.web
+docker_image.app
+docker_image.db
+docker_image.web
+docker_network.lab
+
+--- docker ps ---
+NAMES     STATUS                       PORTS
+lab-web   Up About an hour             0.0.0.0:8081->80/tcp
+lab-app   Up About an hour             
+lab-db    Up About an hour (healthy)   5432/tcp
+
+--- docker network ls ---
+NETWORK ID     NAME                                         DRIVER    SCOPE
+19ba8a23c8f6   bridge                                       bridge    local
+ed35aa097236   dvwa_dvwa                                    bridge    local
+c82c2beb62e2   hackingetico-ctf-explotacion_hacking-stage   bridge    local
+76efa7ba2be0   hacklabEdu                                   bridge    local
+66dc2c8ccbaf   host                                         host      local
+70b5084c13f8   infraestructura_empresa_red_empresa          bridge    local
+632ee639be29   lab-network                                  bridge    local
+8b908da484db   none                                         null      local
+d5ef4db8c4ec   novatech-ctf_novatech_net                    bridge    local
+
+--- IPs asignadas en lab-network ---
+lab-db -> 10.10.0.30/24
+lab-app -> 10.10.0.20/24
+lab-web -> 10.10.0.10/24
+
+
+--- curl http://localhost:8081 ---
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Sun, 11 Oct 2026 19:37:07 GMT
+Content-Type: text/html
+Content-Length: 206
+Last-Modified: Sat, 10 Oct 2026 19:22:12 GMT
+Connection: keep-alive
+ETag: "6aca9064-ce"
+Accept-Ranges: bytes
+
+<h1>Servidor Web - lab</h1>
+<p>Infraestructura creada con Terraform.</p>
+
+--- Comprobaciones automáticas ---
+[ OK ] Configuración Terraform válida
+[ OK ] Red lab-network existe
+[ OK ] Contenedor WEB en ejecución
+[ OK ] Contenedor APP en ejecución
+[ OK ] Contenedor DB en ejecución
+[ OK ] WEB tiene IP 10.10.0.10
+[ OK ] APP tiene IP 10.10.0.20
+[ OK ] DB tiene IP 10.10.0.30
+[ OK ] WEB -> APP (ping 10.10.0.20)
+[ OK ] WEB -> DB  (ping 10.10.0.30)
+[ OK ] APP -> DB  (ping 10.10.0.30)
+[ OK ] PostgreSQL acepta conexiones
+[ OK ] HTTP responde en http://localhost:8081
+[ OK ] Proxy WEB -> APP (/app/)
+
+Resultado: 14 correctas, 0 fallidas
